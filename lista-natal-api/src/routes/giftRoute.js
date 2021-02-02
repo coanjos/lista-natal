@@ -42,6 +42,19 @@ router.get(`${routePrefix}/:id`, async (req, res) => {
     }
 })
 
+router.patch(`${routePrefix}/:id`, async (req, res) => {
+    try {
+        const id = req.params.id
+        let sql = `UPDATE Gift SET DESCRICAO = '${req.body.description}' WHERE ID = ${id}`
+        db.query(sql, (err, result) => {
+            if(err) throw err
+            res.status(200).send('updated')
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
 router.delete(`${routePrefix}/:id`, async (req, res) => {
     try {
         const id = req.params.id
