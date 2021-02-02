@@ -17,6 +17,18 @@ router.post(routePrefix, async (req, res) => {
     }
 })
 
+router.get(routePrefix, async (req, res) => {
+    try {
+        let sql = "SELECT * FROM Gift"
+        db.query(sql, (err, result) => {
+            if(err) throw err
+            res.status(201).send(result)
+        })
+    } catch (error) {
+        res.status(500).send(error)
+    }
+})
+
 router.get('*', (req, res) => {
     res.status(404).send('Página não encontrada')
 })
