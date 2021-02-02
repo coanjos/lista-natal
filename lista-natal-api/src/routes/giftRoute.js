@@ -22,7 +22,7 @@ router.get(routePrefix, async (req, res) => {
         let sql = "SELECT * FROM Gift"
         db.query(sql, (err, result) => {
             if(err) throw err
-            res.status(201).send(result)
+            res.status(200).send(result)
         })
     } catch (error) {
         res.status(500).send(error)
@@ -35,7 +35,7 @@ router.get(`${routePrefix}/:id`, async (req, res) => {
         let sql = `SELECT * FROM Gift WHERE ID = ${id}`
         db.query(sql, (err, result) => {
             if(err) throw err
-            res.status(201).send(result)
+            res.status(200).send(result)
         })
     } catch (error) {
         res.status(500).send(error)
