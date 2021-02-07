@@ -5,11 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GiftComponent } from './components/gift/gift.component';
+import { GiftFrontComponent } from './gift-front/gift-front.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GiftComponent
+    GiftComponent,
+    GiftFrontComponent
   ],
   imports: [
     BrowserModule,
