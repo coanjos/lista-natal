@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GiftFrontComponent } from './gift-front.component';
+import { ChristmasWishlistComponent } from './christmas-wishlist.component';
 
-describe('GiftFrontComponent', () => {
-  let component: GiftFrontComponent;
-  let fixture: ComponentFixture<GiftFrontComponent>;
+describe('ChristmasWishlistComponent', () => {
+  let component: ChristmasWishlistComponent;
+  let fixture: ComponentFixture<ChristmasWishlistComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GiftFrontComponent ]
+      declarations: [ ChristmasWishlistComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GiftFrontComponent);
+    fixture = TestBed.createComponent(ChristmasWishlistComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

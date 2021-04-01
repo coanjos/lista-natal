@@ -4,14 +4,16 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ChristmasWishlistComponent } from './components/christmas-wishlist/christmas-wishlist.component';
 import { GiftComponent } from './components/gift/gift.component';
-import { GiftFrontComponent } from './gift-front/gift-front.component';
+import { GiftListComponent } from './components/gift-list/gift-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChristmasWishlistComponent,
     GiftComponent,
-    GiftFrontComponent
+    GiftListComponent
   ],
   imports: [
     BrowserModule,
