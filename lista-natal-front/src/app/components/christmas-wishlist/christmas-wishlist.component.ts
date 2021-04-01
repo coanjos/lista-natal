@@ -7,7 +7,7 @@ import { Gift } from 'src/app/models/gift';
   styleUrls: ['./christmas-wishlist.component.css']
 })
 export class ChristmasWishlistComponent implements OnInit {
-  gift: Gift = { id: 1, description: 'wololo' };  
+  gift: Gift = { ID: 1, DESCRICAO: 'wololo' };  
 
   constructor() { }
 
