@@ -2,4 +2,10 @@
 <div *ngFor="let gift of gifts">
     <span>{{ gift.DESCRICAO }}</span>
     <button (click)="onDelete(gift.ID)">x</button>
+    <button *ngIf="!isEditMode" (click)="onMarkToEdit(gift.ID)">E</button>
+</div>
+
+<div *ngIf="isEditMode">
+    <input (change)="onChange($event)" type="text">
+    <button (click)="onUpdate()">editar</button>
 </div>

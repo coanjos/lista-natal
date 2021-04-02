@@ -9,6 +9,9 @@ import { GiftService } from 'src/app/services/gift.service';
 })
 export class GiftListComponent implements OnInit {
   gifts: Gift[];
+  isEditMode: Boolean = false;
+  editId: number;
+  editDescricao: string;
 
   constructor(private giftService: GiftService) { }
 
@@ -22,4 +25,21 @@ export class GiftListComponent implements OnInit {
     this.giftService.deleteGift(id).subscribe();
   }
 
+  onToggleEditMode() {
+    this.isEditMode = !this.isEditMode;
+  }
+
+  onMarkToEdit(id: number) {
+    this.onToggleEditMode();
+    this.editId = id;
+  }
+
+  onUpdate() {
+    this.giftService.updateGift(this.editId, this.editDescricao).subscribe();
+    this.onToggleEditMode();
+  }
+
+  onChange(e) {
+    this.editDescricao = e.target.value;
+  }
 }
