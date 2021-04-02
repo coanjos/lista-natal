@@ -18,4 +18,8 @@ export class GiftService {
     return this.http.get<Gift[]>(`${this.apiUrl}/api/gifts`);
   }
 
+  addGift(description: string) {
+    return this.http.post(`${this.apiUrl}/api/gifts/`, {description});
+  }
+
 }

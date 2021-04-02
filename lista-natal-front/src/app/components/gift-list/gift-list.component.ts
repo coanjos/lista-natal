@@ -16,7 +16,6 @@ export class GiftListComponent implements OnInit {
     this.giftService.getGifts().subscribe(data => {
       this.gifts = data;
     });
-
   }
 
 }
