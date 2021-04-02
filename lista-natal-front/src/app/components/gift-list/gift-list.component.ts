@@ -1,3 +1,4 @@
+import { Input, Output, EventEmitter } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Gift } from 'src/app/models/gift';
 import { GiftService } from 'src/app/services/gift.service';
@@ -8,7 +9,11 @@ import { GiftService } from 'src/app/services/gift.service';
   styleUrls: ['./gift-list.component.css']
 })
 export class GiftListComponent implements OnInit {
-  gifts: Gift[];
+  @Input() giftsFilho: Gift[];
+  @Output() deleteGift = new EventEmitter<number>();
+  @Output() updateGift = new EventEmitter<Gift>();
+  gift: Gift = { ID: 0, DESCRICAO: '' };
+  
   isEditMode: Boolean = false;
   editId: number;
   editDescricao: string;
@@ -16,13 +21,7 @@ export class GiftListComponent implements OnInit {
   constructor(private giftService: GiftService) { }
 
   ngOnInit(): void {
-    this.giftService.getGifts().subscribe(data => {
-      this.gifts = data;
-    });
-  }
 
-  onDelete(id: number) {
-    this.giftService.deleteGift(id).subscribe();
   }
 
   onToggleEditMode() {
@@ -35,11 +34,17 @@ export class GiftListComponent implements OnInit {
   }
 
   onUpdate() {
-    this.giftService.updateGift(this.editId, this.editDescricao).subscribe();
+    this.gift.ID = this.editId;
+    this.gift.DESCRICAO = this.editDescricao;
+    this.updateGift.emit(this.gift);
     this.onToggleEditMode();
   }
 
   onChange(e) {
     this.editDescricao = e.target.value;
+  }
+
+  onDelete(id: number) {
+    this.deleteGift.emit(id);
   }
 }

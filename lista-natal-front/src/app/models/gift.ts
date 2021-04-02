@@ -1,4 +1,4 @@
 export interface Gift {
-    ID: Number;
-    DESCRICAO: String;
+    ID: number;
+    DESCRICAO: string;
 }
