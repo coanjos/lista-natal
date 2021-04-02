@@ -25,4 +25,8 @@ export class GiftService {
   deleteGift(id: number) {
     return this.http.delete(`${this.apiUrl}/api/gifts/${id}`);
   }
+
+  updateGift(id: number, description: string) {
+    return this.http.patch(`${this.apiUrl}/api/gifts/${id}`, {description});
+  }
 }
