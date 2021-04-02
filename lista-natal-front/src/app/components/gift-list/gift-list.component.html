@@ -1,8 +1,9 @@
 <h2>Neste Natal, quero ganhar...</h2>
-<div *ngFor="let gift of gifts">
+<div *ngFor="let gift of giftsFilho">
     <span>{{ gift.DESCRICAO }}</span>
     <button (click)="onDelete(gift.ID)">x</button>
     <button *ngIf="!isEditMode" (click)="onMarkToEdit(gift.ID)">E</button>
+    <hr>
 </div>
 
 <div *ngIf="isEditMode">

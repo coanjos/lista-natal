@@ -1,2 +1,3 @@
-<app-gift></app-gift>
-<app-gift-list></app-gift-list>
+<app-gift (addGift)="onAddGift($event)"></app-gift>
+<app-gift-list [giftsFilho]="giftsPai" (deleteGift)="onDeleteGift($event)" (updateGift)="onEditGift($event)">
+</app-gift-list>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { GiftService } from 'src/app/services/gift.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { GiftService } from 'src/app/services/gift.service';
 })
 export class GiftComponent implements OnInit {
   descricao: string = '';
+  @Output() addGift = new EventEmitter<string>()
 
   constructor(private giftService: GiftService) { }
 
@@ -16,10 +17,7 @@ export class GiftComponent implements OnInit {
   }
 
   onClick() {
-    this.giftService.addGift(this.descricao).subscribe(data => {
-      console.log(data)
-    });
-
+    this.addGift.emit(this.descricao)
   }
 
   onChange(e) {
