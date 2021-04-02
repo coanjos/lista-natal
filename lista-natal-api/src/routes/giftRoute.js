@@ -10,7 +10,7 @@ router.post(routePrefix, async (req, res) => {
         let sql = `INSERT INTO Gift (DESCRICAO) VALUES ("${gift.description}")`
         db.query(sql, (err, result) => {
             if(err) throw err
-            res.status(201).send('created')
+            res.status(201).send({message: 'created'})
         })
     } catch (error) {
         res.status(500).send(error)
