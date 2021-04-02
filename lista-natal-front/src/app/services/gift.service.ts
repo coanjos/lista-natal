@@ -22,4 +22,7 @@ export class GiftService {
     return this.http.post(`${this.apiUrl}/api/gifts/`, {description});
   }
 
+  deleteGift(id: number) {
+    return this.http.delete(`${this.apiUrl}/api/gifts/${id}`);
+  }
 }

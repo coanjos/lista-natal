@@ -18,4 +18,8 @@ export class GiftListComponent implements OnInit {
     });
   }
 
+  onDelete(id: number) {
+    this.giftService.deleteGift(id).subscribe();
+  }
+
 }

@@ -1,2 +1,5 @@
 <h2>Neste Natal, quero ganhar...</h2>
-<p *ngFor="let gift of gifts">{{ gift.DESCRICAO }}</p>
+<div *ngFor="let gift of gifts">
+    <span>{{ gift.DESCRICAO }}</span>
+    <button (click)="onDelete(gift.ID)">x</button>
+</div>

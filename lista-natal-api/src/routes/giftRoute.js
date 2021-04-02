@@ -48,7 +48,7 @@ router.patch(`${routePrefix}/:id`, async (req, res) => {
         let sql = `UPDATE Gift SET DESCRICAO = '${req.body.description}' WHERE ID = ${id}`
         db.query(sql, (err, result) => {
             if(err) throw err
-            res.status(200).send('updated')
+            res.status(200).send({message: 'updated'})
         })
     } catch (error) {
         res.status(500).send(error)
@@ -61,7 +61,7 @@ router.delete(`${routePrefix}/:id`, async (req, res) => {
         let sql = `DELETE FROM Gift WHERE ID = ${id}`
         db.query(sql, (err, result) => {
             if(err) throw err
-            res.status(200).send('deleted')
+            res.status(200).send({message: 'deleted'})
         })
     } catch (error) {
         res.status(500).send(error)
