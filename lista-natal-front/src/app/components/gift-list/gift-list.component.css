@@ -1,0 +1,11 @@
+.amarelo {
+    background-color: yellow;
+    width: 50%;
+    display: inline-block;
+    line-height: 60px;
+    border-bottom: 1px dashed black;
+}
+
+.amarelo:nth-of-type(1) {
+    border-top: 1px dashed black;
+}
