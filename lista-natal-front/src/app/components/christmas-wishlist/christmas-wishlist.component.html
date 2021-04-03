@@ -1,3 +1,7 @@
-<app-gift (addGift)="onAddGift($event)"></app-gift>
-<app-gift-list [giftsFilho]="giftsPai" (deleteGift)="onDeleteGift($event)" (updateGift)="onEditGift($event)">
-</app-gift-list>
+<div class="folha">
+    <div>
+        <app-gift (addGift)="onAddGift($event)"></app-gift>
+        <app-gift-list [giftsFilho]="giftsPai" (deleteGift)="onDeleteGift($event)" (updateGift)="onEditGift($event)">
+        </app-gift-list>
+    </div>
+</div>

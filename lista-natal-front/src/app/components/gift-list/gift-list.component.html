@@ -1,17 +1,23 @@
-<div class="text-center">
-    <h2>Neste Natal, quero ganhar...</h2>
+<div class="text-center folha">
+    <h2 class="header">Neste Natal, quero ganhar...</h2>
     <div class="w-50 mx-auto">
         <div *ngFor="let gift of giftsFilho">
             <div class="amarelo">
-                <span class="carderno">{{ gift.DESCRICAO }}</span>                
+                <span class="caderno">{{ gift.DESCRICAO }}</span>                
             </div>
-            <button class="btn btn-danger ml-1" (click)="onDelete(gift.ID)">x</button>
-            <button class="btn btn-warning ml-1" *ngIf="!isEditMode" (click)="onMarkToEdit(gift.ID)">E</button>
+            <button class="btn btn-danger ml-1" (click)="onDelete(gift.ID)">
+                <i class="fas fa-eraser"></i>
+            </button>
+            <button class="btn btn-warning ml-1" *ngIf="!isEditMode" (click)="onMarkToEdit(gift.ID)">
+                <i class="fas fa-edit"></i>
+            </button>
         </div>
     </div>
 
     <div class="input-group" *ngIf="isEditMode">
-        <input class="form-control" (change)="onChange($event)" type="text">
-        <button  class="btn btn-success ml-1 input-group-append" (click)="onUpdate()">editar</button>
+        <input class="form-control inputEditar" (change)="onChange($event)" type="text">
+        <button  class="btn btn-success ml-1" (click)="onUpdate()">
+            <i class="fas fa-edit"></i>
+        </button>
     </div>
 </div>

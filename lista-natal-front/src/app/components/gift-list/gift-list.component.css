@@ -1,11 +1,25 @@
-.amarelo {
-    background-color: yellow;
-    width: 50%;
-    display: inline-block;
-    line-height: 60px;
-    border-bottom: 1px dashed black;
+.folha {
+    width: 70%;
+    padding: 10px;
+    margin: auto;
 }
 
-.amarelo:nth-of-type(1) {
-    border-top: 1px dashed black;
+.amarelo {
+    width: 60%;
+    display: inline-block;
+    line-height: 60px;
+    border-bottom: 1px solid red;
+    border-width: 100%;
+    color: snow;
+}
+
+.inputEditar {
+    width: 10%;
+    padding: 10px;
+    margin: auto;
+}
+
+.header {
+    font-family: sans-serif;
+    color: snow;
 }

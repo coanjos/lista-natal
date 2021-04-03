@@ -1,6 +1,8 @@
-<div class="input-group mb-3 w-50 text-center">
-    <input type="text" class="form-control" type="text" (change)="onChange($event)" [value]="descricao" aria-label="Recipient's username" aria-describedby="basic-addon2">
+<div class="input-group mb-3 w-50 text-center inputAdicionar">
+    <input type="text" placeholder="adicione um presente a lista" class="form-control" type="text" (change)="onChange($event)" [value]="descricao" aria-label="Recipient's username" aria-describedby="basic-addon2">
     <div class="input-group-append">
-      <button class="btn ml-1 btn-success" (click)="onClick()" type="button">adicionar</button>
+      <button class="btn ml-1 btn-success" (click)="onClick()" type="button">
+        <i class="fas fa-gift"></i>
+      </button>
     </div>
   </div>
